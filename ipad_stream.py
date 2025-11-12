@@ -12,10 +12,11 @@ from record3d import Record3DStream
 from threading import Event
 
 class DemoApp:
-    def __init__(self):
+    def __init__(self, rot = False):
         self.event = Event()
         self.session = None
-        self.vis = o3d.visualization.Visualizer()
+        self.rot = rot
+        self.vis = o3d.visualization.VisualizerWithKeyCallback()
         self.vis.create_window()
         self.filter_enabled = False
         self.recording = False
@@ -123,7 +124,7 @@ class DemoApp:
                 print("Recording saved")
             return True
             
-        self.vis.register_key_callback(key_callback)
+        #self.vis.register_key_callback(key_callback)
         
         # Loop for point clouds
         while True:
