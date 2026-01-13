@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load Unity log
-df = pd.read_csv("D:\\DAE\\GradWork\\apple-lidar-stream\\LidarStreaming\\Assets\\unity_hand_tracking_log.csv")
+df = pd.read_csv("apple-lidar-stream\\LidarStreaming\\Assets\\unity_hand_tracking_log.csv")
 
 # Basic stats
 print(df["latency_ms"].describe())
